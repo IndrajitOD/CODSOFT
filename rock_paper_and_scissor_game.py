@@ -1,4 +1,3 @@
-
 print("\nWelcome to the Rock Paper and Scissors Game\n")
 print("It is You vs Computer")
 print("Who ever wins 5 times first, wins the game\n")
