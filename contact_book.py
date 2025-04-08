@@ -10,9 +10,9 @@ def add_contact(contact_book):
     name = input("\nEnter contact name: ")
     phone = input("Enter contact phone number: ")
     if name in contact_book:
-        print("Contact already exists!")
+        print("Name of the contact already exists!")
     elif phone in contact_book.values():
-        print("Phone number already exists!")
+        print("Phone number of the contact already exists!")
     else:
         contact_book[name] = phone
         print("Contact ",name," added successfully to your Contact Book!\n")
