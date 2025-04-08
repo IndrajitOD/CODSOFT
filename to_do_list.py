@@ -1,31 +1,67 @@
-print ("Welcome to my simple to do list")
-print ("I have creater this list where you can add tasks, delete a task, view and update your tasks in the list")
-choice ="c"
-list = []
-while choice == "c":
+def display_choice():
     print("--------------------------------------------------------")
     print("Enter the operation you want to perform\n")
-    operation = (input("1. Enter a to add a task to the list\n2. Enter d to delete a task from the list\n3. Enter v to view the list\n4. Enter u to update task in the list\n"))
-    if operation =="a":
-        task = input("Enter the task to add to the list : ")
-        list.append(task)
-    elif operation == "d":
-        task=input("Enter the task to delete from the list : ")
-        if task in list:
-            list.remove(task)
-        else:
-            print("Your task was not found in the list")
-    elif operation == "v":
-        print(list)
-    elif operation =="u":
-        task=input("Enter the task to update in the list : ")
-        if task in list:
-            index = list.index(task)
-            new = input("Enter the new task : ")
-            list[index]=new
-        else:
-            print("this Task was not found in the list")
+    print("1. Add a task to the list")
+    print("2. Delete a task from the list")
+    print("3. View the list")
+    print("4. Update a task in the list")
+    print("5. Exit the list.")
+
+def add_task(task_list):
+    task = input("Enter the task to add to the list: ")
+    task_list.append(task)
+    print("Task ",task," added successfully in the list!")
+
+def delete_task(task_list):
+    task = input("Enter the task to delete from the list: ")
+    if task in task_list:
+        task_list.remove(task)
+        print("Task ",task," deleted successfully!")
     else:
-        print("\nInvalid operation\n")
-    choice=input("\nEnter c to continue or any other key to quit\n")
-print("Thank you for using my to do list")
+        print("Error! Your task was not found in the list")
+        print("Enter a valid task to delete from the list")
+
+def view_tasks(task_list):
+    if task_list:
+        print("\nYour tasks:")
+        i = 1
+        for task in task_list:
+            print(i," : ",task)
+            i =i+1
+    else:
+        print("\List is empty!")
+
+def update_task(task_list):
+    task = input("Enter the task to update in the list: ")
+    if task in task_list:
+        index = task_list.index(task)
+        new_task = input("Enter the new task: ")
+        task_list[index] = new_task
+        print("Task ",task," updated to ",new_task," successfully!")
+    else:
+        print("This task was not found in the list")
+
+def main():
+    print("Welcome to my simple to-do list")
+    print("This can add a tasks, delete a task, view, and update your tasks in the list")
+    task_list = []
+    while True:
+        display_choice()
+        operation =(input("\nEnter your choice (1-5): "))
+        if operation == 1:
+            add_task(task_list)
+        elif operation == 2:
+            delete_task(task_list)
+        elif operation == 3:
+            view_tasks(task_list)
+        elif operation == 4:
+            update_task(task_list)
+        elif operation == 5:
+            print("Exiting the to-do list. Thank you for using the To-Do-List!")
+            print("All the tasks are deleted from the list!")
+            break
+        else:
+            print("\nInvalid choice. Please enter a number between 1 and 5.\n")
+
+if __name__ == "__main__":
+    main()
