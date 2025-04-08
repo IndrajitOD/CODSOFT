@@ -50,10 +50,12 @@ while (True):
     print("\nThe score is you:",i ,"  Computer:",j,"\n\n")
     k+=1
     if(i==5):
+        print("--------------------------------------------------------------")
         print("Congratulations :: You are the winner")
         break
     elif(j==5):
         print("Computer Win's")
         print("Well played")
         break
+print("--------------------------------------------------------------")
 print("\nThanks for playing")
