@@ -1,4 +1,4 @@
-def display_menu():
+def display_choice():
     print("Enter your choice:")
     print("1. Add a new contact")
     print("2. View all the contacts")
@@ -47,7 +47,7 @@ def main():
     contact_book = {}
     while True:
         print("--------------------------------------------------------")
-        display_menu()
+        display_choice()
         choice = input("\nEnter your choice (1-5): ")
         if choice == "1":
             add_contact(contact_book)
