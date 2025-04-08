@@ -3,6 +3,7 @@ print ("I have creater this list where you can add tasks, delete a task, view an
 choice ="c"
 list = []
 while choice == "c":
+    print("--------------------------------------------------------")
     print("Enter the operation you want to perform\n")
     operation = (input("1. Enter a to add a task to the list\n2. Enter d to delete a task from the list\n3. Enter v to view the list\n4. Enter u to update task in the list\n"))
     if operation =="a":
