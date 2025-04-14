@@ -47,7 +47,7 @@ def main():
     task_list = []
     while True:
         display_choice()
-        operation =(input("\nEnter your choice (1-5): "))
+        operation =int(input("\nEnter your choice (1-5): "))
         if operation == 1:
             add_task(task_list)
         elif operation == 2:
